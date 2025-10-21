@@ -8,6 +8,7 @@ services:
       - ./public:/var/www/html
     depends_on:
       - db
+
   db:
     image: mysql:8
     environment:
@@ -15,3 +16,13 @@ services:
       MYSQL_DATABASE: demo
       MYSQL_USER: user
       MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
