@@ -1,3 +1,3 @@
 <?
-echo "<h1>Hola Mundo</h1>";
+echo "<h1>Hola Mön</h1>";
 ?>
